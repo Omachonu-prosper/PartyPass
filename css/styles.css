@@ -19,7 +19,7 @@
 .checkout-card {
     width: 30%;
     border-radius: 10px;
-    max-height: 260px;
+    max-height: 300px;
     position: sticky;
     top: 40px;
 }
@@ -47,6 +47,19 @@
     position: sticky;
     bottom: 0;
     display: none;
+}
+
+.checkout-container {
+    max-width: 600px;
+}
+
+.no-of-tickets .uk-label {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.no-of-tickets .uk-input {
+    width: 80px;
 }
 
 @media screen and (max-width: 750px) {
