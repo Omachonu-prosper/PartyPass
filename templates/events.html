@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'nav.html' %}
+
+<section>
+    <div class="uk-container uk-margin-large-top uk-margin-large-bottom">
+        <h2>Popular events</h2>
+
+        <div class="uk-grid-large uk-child-width-1-2@s uk-child-width-1-3@m" uk-grid>
+            {% for i in range(10) %}
+                <a href="{{ url_for('event', id=i+1) }}">
+                    <div class="party-image uk-responsive-height" style="background-image: url(/static/images/anthony-delanoix-hzgs56Ze49s-unsplash.jpg);"></div>
+
+                    <div class="uk-margin-small-top">
+                        <p class="uk-text-bold uk-text-default uk-margin-remove">Party title <span class="uk-align-right uk-text-primary">₦1,500</span></p>
+                        <p class="uk-text-small uk-margin-remove"><span uk-icon="calendar"></span> Nov 27 - 7:00AM</p>
+                        <p class="uk-text-small uk-margin-remove"><span uk-icon="bookmark"></span> 2k+ registered</p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% include 'footer.html' %}
+
+{% endblock %}

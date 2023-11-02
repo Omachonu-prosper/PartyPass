@@ -4,19 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Party Pass - Your Passport to Ultimate Fun!</title>
-
+    <title>{% block title %}{% endblock %} - PartyPass</title>
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.17.4/dist/css/uikit.min.css" />
-    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
 
-    <section class="main uk-padding">
-        <h1>Party Pass - Your Passport to Ultimate Fun!</h1>
-        <a href="/pages/home.html" class="uk-button uk-button-primary">Go to home</a>
-    </section>
-    
+    {% block content %}{% endblock %}
     
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.4/dist/js/uikit.min.js"></script>

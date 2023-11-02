@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'nav.html' %}
+
+<section class="uk-container-xsmall uk-container checkout-container">
+    <div class="uk-margin-large-top uk-margin-medium-bottom">
+        <div class="uk-card uk-card-default uk-card-body">
+            <a href="{{ url_for('event', id=1) }}" class="event-link">
+                <div class="party-image uk-responsive-height" style="background-image: url(/static/images/anthony-delanoix-hzgs56Ze49s-unsplash.jpg);"></div>
+
+                <div class="uk-margin-small-top">
+                    <p class="uk-text-bold uk-text-default uk-margin-remove">Party title</p>
+                    <p class="uk-text-small uk-margin-remove"><span uk-icon="calendar"></span> Nov 27 - 7:00AM</p>
+                    <p class="uk-text-small uk-margin-remove"><span uk-icon="bookmark"></span> 2k+ registered</p>
+                </div>
+            </a>
+
+            <div class="uk-margin-top">
+                <div>
+                    <input class="uk-checkbox" type="checkbox" checked><label class="uk-margin-small-left">Regular: 1,500</label>
+                    <div class="no-of-tickets uk-margin-small-top">
+                        <span class="uk-label"><span uk-icon="plus"></span></span>
+                        <input class="uk-input" type="number" value="1" min="1">
+                        <span class="uk-label"><span uk-icon="minus"></span></span>
+                    </div>
+                </div>
+                
+                <div class="uk-margin-top">
+                    <input class="uk-checkbox" type="checkbox"><label class="uk-margin-small-left">VIP: 15,000</label>
+                    <div class="no-of-tickets uk-margin-small-top">
+                        <span class="uk-label"><span uk-icon="plus"></span></span>
+                        <input class="uk-input" type="number" value="1" min="1" disabled>
+                        <span class="uk-label"><span uk-icon="minus"></span></span>
+                    </div>
+                </div>
+
+                <div class="uk-margin-top">
+                    <h4>Total: 30,000</h4>
+
+                    <a class="uk-button uk-button-primary uk-width-expand" href="#">Proceed to Checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'footer.html' %} 
+{% endblock %}
