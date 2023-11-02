@@ -11,10 +11,10 @@
         <div class="uk-flex uk-margin-medium-top">
             <div class="event-container">
                 <div class="">
-                    <h3 class="uk-text-bolder uk-margin-remove">Party title</h3>
-                    <p class="uk-text-small uk-margin-remove"><span uk-icon="calendar"></span> Nov 27 - 7:00AM</p>
-                    <p class="uk-text-small uk-margin-remove"><span uk-icon="bookmark"></span> 2k+ registered</p>
-                    <p class="uk-text-small uk-margin-remove"><span uk-icon="location"></span> Freedom square University of Nigeria Nsukka</p>
+                    <h3 class="uk-text-bolder uk-margin-remove">{{ event['title'] }}</h3>
+                    <p class="uk-text-small uk-margin-remove"><span uk-icon="calendar"></span> {{ event['date'] }} - {{ event['time'] }}</p>
+                    <p class="uk-text-small uk-margin-remove"><span uk-icon="bookmark"></span> {{ event['tickets']['registered'] }} registered</p>
+                    <p class="uk-text-small uk-margin-remove"><span uk-icon="location"></span> {{ event['location'] }}</p>
                 </div>
 
                 <hr class="uk-divider-icon">
@@ -23,8 +23,7 @@
                     <h4 class="uk-text-bolder">About this event</h4>
 
                     <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit nemo minus enim suscipit optio, labore illo dolore, ipsum iste culpa blanditiis, voluptatum ex delectus fuga aspernatur corporis commodi esse praesentium.
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit praesentium cupiditate omnis cumque, aliquam exercitationem. Adipisci asperiores reiciendis beatae voluptate laudantium porro officia deserunt voluptatum quia autem quam expedita, laborum modi illum molestias natus doloribus nam dolorum iste dolor. Nihil itaque recusandae maxime consectetur placeat deleniti commodi tempore magnam vitae?
+                        {{ event['description'] }}
                     </p>
                 </div>
 
@@ -34,8 +33,8 @@
                     <h4 class="uk-text-bolder">About the organizers</h4>
 
                     <div class="uk-card uk-flex uk-flex-column uk-flex-middle uk-card-default organizers-card uk-margin-top">
-                        <img class="uk-border-circle organizer-image uk-margin-remove-bottom" src="/static/images/kristina-evstifeeva-y3h6gh2fpaI-unsplash.jpg" alt="User image">
-                        <h4 class="uk-margin-remove">John Doe</h4>
+                        <img class="uk-border-circle organizer-image uk-margin-remove-bottom" src="{{ event['organizer']['image_url'] }}" alt="User image">
+                        <h4 class="uk-margin-remove">{{ event['organizer']['name'] }}</h4>
                         <div class="">
                             <a class="uk-button uk-button-primary uk-margin-top" href="">Contact organizers</a>
                         </div>
@@ -45,17 +44,17 @@
 
             <div class="checkout-card uk-margin-medium-left uk-card uk-card-body uk-card-default">
                 <div class="uk-card-header uk-padding-remove-horizontal uk-padding-remove-top">
-                    <p class="uk-margin-remove">Regular: ₦1,500</p>
-                    <p class="uk-margin-remove">VIP: ₦15,000</p>
+                    <p class="uk-margin-remove">Regular: {{ event['price']['regular']['price_str'] }}</p>
+                    <p class="uk-margin-remove">VIP: {{ event['price']['vip']['price_str'] }}</p>
                 </div>
                 
                 <div class="uk-card-footer uk-padding-remove-horizontal">
-                    <p class="uk-text-small uk-margin-remove"><span uk-icon="calendar"></span> Nov 27 - 7:00AM</p>
-                    <p class="uk-text-small uk-margin-remove"><span uk-icon="bookmark"></span> 2k+ registered</p>
+                    <p class="uk-text-small uk-margin-remove"><span uk-icon="calendar"></span> {{ event['date'] }} - {{ event['time'] }}</p>
+                    <p class="uk-text-small uk-margin-remove"><span uk-icon="bookmark"></span> {{ event['tickets']['registered'] }} registered</p>
                 </div>
 
                 <div class="uk-card-footer uk-padding-remove-horizontal uk-padding-remove-bottom">
-                    <a class="uk-button uk-button-primary uk-width-expand" href="{{ url_for('buy_ticket', id='123-123') }}">Buy ticket</a>
+                    <a class="uk-button uk-button-primary uk-width-expand" href="{{ url_for('buy_ticket', id=event['id']) }}">Buy ticket</a>
                 </div>
             </div>
         </div>
@@ -97,10 +96,10 @@
 
 <div class="checkout-footer uk-flex uk-flex-between uk-flex-middle uk-padding-small">
     <div class="">
-        <p class="uk-margin-remove">Regular: ₦1,500</p>
-        <p class="uk-margin-remove">VIP: ₦15,000</p>
-        <p class="uk-text-small uk-margin-remove"><span uk-icon="calendar"></span> Nov 27 - 7:00AM</p>
-        <p class="uk-text-small uk-margin-remove"><span uk-icon="bookmark"></span> 2k+ registered</p>
+        <p class="uk-margin-remove">Regular: {{ event['price']['regular']['price_str'] }}</p>
+        <p class="uk-margin-remove">VIP: {{ event['price']['vip']['price_str'] }}</p>
+        <p class="uk-text-small uk-margin-remove"><span uk-icon="calendar"></span> {{ event['date'] }} - {{ event['time'] }}</p>
+        <p class="uk-text-small uk-margin-remove"><span uk-icon="bookmark"></span> {{ event['tickets']['registered'] }} registered</p>
     </div>
 
     <div class="">
